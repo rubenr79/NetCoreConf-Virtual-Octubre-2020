@@ -1,0 +1,31 @@
+﻿@model IEnumerable<NetCoreConfDemoWeb.Models.WeatherForecast>
+@{
+    ViewData["Title"] = "Call protected API";
+}
+
+<div class="text-center">
+    <h2>Weather Forecast</h2>
+    <table>
+        <thead>
+            <tr>
+                <td><strong>Date</strong></td>
+                <td><strong>ºC</strong></td>
+                <td><strong>ºF</strong></td>
+                <td><strong>Summary</strong></td>
+            </tr>
+        </thead>
+        @{ foreach (var forecast in Model)
+            {
+                <tr>
+                    <td>@forecast.Date</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+                }
+            }
+
+
+
+    </table>
+</div>

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped table-condensed" style="font-family: monospace">
+    <tr>
+        <th>Team</th>
+        <th>Value</th>
+    </tr>
+    @{
+        var teams = ViewData["JoinedTeams"] as Microsoft.Graph.UserJoinedTeamsCollectionPage;
+
+        foreach (var team in teams)
+        {
+            <tr>
+                <td> @team.DisplayName </td>
+            </tr>
+        }
+    }
+</table>
